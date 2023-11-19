@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('sendData','ApiController@inputData');
+Route::post('checkConnection','ApiController@checkConnection');
+Route::post('calibration','ApiController@calibration');
+Route::post('notifBattery','ApiController@notifBattery');
+Route::post('checkDeviceStatus','ApiController@checkDeviceStatus');
