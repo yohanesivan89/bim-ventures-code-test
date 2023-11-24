@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cabang extends Model
+class Role extends Model
 {
-    protected $table = 'cabangs';
+    protected $table = 'roles';
 
     public $primaryKey = 'id';
 

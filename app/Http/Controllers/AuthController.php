@@ -30,12 +30,12 @@ class AuthController extends Controller
         {
             if(Hash::check($request->password, $checkEmail->password))
             {
+                $rememberMe = false;
                 if(isset($request->rememberme))
                 {
-                    Auth::loginUsingId($checkEmail->id, true);
-                }else{
-                    Auth::loginUsingId($checkEmail->id);
+                    $rememberMe = true;
                 }
+                Auth::loginUsingId($checkEmail->id, $rememberMe);
                 return redirect(route('dashboard'));
             }else{
                 return Redirect::back()->withErrors(['msg' => 'Password missmatch']);

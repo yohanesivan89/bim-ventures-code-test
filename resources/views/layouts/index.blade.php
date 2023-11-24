@@ -53,8 +53,8 @@
 							<div class="dropdown-menu" aria-labelledby="profileDropdown">
 								<div class="dropdown-header d-flex flex-column align-items-center">
 									<div class="info text-center">
-										<p class="name font-weight-bold mb-0">{{auth()->user()->name}}</p>
-										<p class="email text-muted mb-3">{{auth()->user()->email}}</p>
+										<p class="name font-weight-bold mb-0"></p>
+										<p class="email text-muted mb-3"></p>
 									</div>
 								</div>
 								<div class="dropdown-body">

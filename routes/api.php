@@ -13,9 +13,3 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::post('sendData','ApiController@inputData');
-Route::post('checkConnection','ApiController@checkConnection');
-Route::post('calibration','ApiController@calibration');
-Route::post('notifBattery','ApiController@notifBattery');
-Route::post('checkDeviceStatus','ApiController@checkDeviceStatus');

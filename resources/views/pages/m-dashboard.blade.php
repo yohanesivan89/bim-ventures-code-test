@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h6 class="card-title">Dashboard</h6>
+        <h6 class="card-title">Transaction List</h6>
         <div class="table-responsive">
             <table id="dataDash" class="table table-striped table-hover">
                 <thead>
@@ -43,9 +43,9 @@
 <!-- end plugin js for this page -->
 <!-- custom js for this page -->
 <script>
-    var table = $('#dataDash').DataTable({
+    /*var table = $('#dataDash').DataTable({
         "ajax" : {
-            url: '{{route('dashboard.ajax')}}',
+            url: '',
             type: 'POST',
             data: {
                 "_token": "{{ csrf_token() }}",
@@ -81,10 +81,6 @@
         "language": {
             search: ""
         },
-    });
-
-    setInterval( function () {
-        table.ajax.reload( null, false );
-    }, 5000 );
+    });*/
 </script>
 @endsection

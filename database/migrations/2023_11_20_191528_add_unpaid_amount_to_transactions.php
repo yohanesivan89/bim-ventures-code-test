@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnDevice extends Migration
+class AddUnpaidAmountToTransactions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddColumnDevice extends Migration
      */
     public function up()
     {
-        Schema::table('devices', function (Blueprint $table) {
-            $table->string('auth')->nullable();
-            $table->string('adc')->nullable();
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->float('unpaid_amount', 12, 2);
         });
     }
 
@@ -26,9 +25,8 @@ class AddColumnDevice extends Migration
      */
     public function down()
     {
-        Schema::table('devices', function (Blueprint $table) {
-            $table->dropColumn('auth');
-            $table->dropColumn('adc');
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->dropColumn('unpaid_amount');
         });
     }
 }

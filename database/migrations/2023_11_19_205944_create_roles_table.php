@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCabangsTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateCabangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cabangs', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('notifbefore');
-            $table->string('notifafter');
-            $table->string('status');
-            $table->string('statusnotif');
+            $table->string('name');
+            $table->integer('level');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateCabangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cabangs');
+        Schema::dropIfExists('roles');
     }
 }

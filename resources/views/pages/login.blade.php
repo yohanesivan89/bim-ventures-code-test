@@ -28,14 +28,9 @@
 					<div class="col-md-8 col-xl-6 mx-auto">
 						<div class="card">
 							<div class="row">
-                <div class="col-md-4 pr-md-0">
-                  <div class="auth-left-wrapper">
-                    
-                  </div>
-                </div>
-                <div class="col-md-8 pl-md-0">
+                <div class="col-md-12 pl-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo d-block mb-2">ESP</a>
+                    <a href="#" class="noble-ui-logo d-block mb-2">BIM Ventures</a>
                     <h5 class="text-muted font-weight-normal mb-4">Login</h5>
                     <form class="forms-sample" method="POST" action="{{route('login.check')}}">
                       @csrf

@@ -14,35 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('', function(){
-    return redirect(route('dashboard'));
+    return redirect(route('login'));
 });
 
 Route::get('login', 'AuthController@index')->name('login');
 Route::post('login/check', 'AuthController@checkLogin')->name('login.check');
 Route::get('logout', 'AuthController@logout')->name('logout');
 
-Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-Route::post('dashboard/ajax', 'DashboardController@ajaxData')->name('dashboard.ajax');
+Route::get('member/dashboard', 'DashboardMemberController@index')->name('member.dashboard');
 
-Route::get('laporan', 'LaporanController@index')->name('laporan.view');
-Route::get('ajax/modal', 'LaporanController@ajaxModalData')->name('laporan.modalchart');
+Route::get('admin/dashboard', 'DashboardAdminController@index')->name('admin.dashboard');
 
-Route::group(['middleware' => ['adminrole']], function () {
-    Route::get('unknown', 'UnknownController@index')->name('unknown');
-    Route::post('delete/unknown', 'UnknownController@ajaxDelete')->name('unknown.delete');
+Route::get('admin/transaction/create', 'TransactionAdminController@createView')->name('admin.create.view');
+Route::post('admin/transaction/post', 'TransactionAdminController@addTransaction')->name('admin.create.post');
 
-    Route::get('device', 'DeviceController@index')->name('device.view');
-    Route::get('device/detail', 'DeviceController@getDetail')->name('device.detail');
-    Route::post('device/update', 'DeviceController@updateDevice')->name('device.update');
-    Route::post('device/create', 'DeviceController@create')->name('device.create');
-    Route::post('device/delete', 'DeviceController@delete')->name('device.delete');
-
-    Route::get('cabang', 'CabangController@index')->name('cabang.view');
-    Route::post('cabang/create', 'CabangController@create')->name('cabang.create');
-
-    Route::get('user', 'UserController@index')->name('user.view');
-    Route::post('user/create', 'UserController@create')->name('user.create');
-
-    Route::get('settings', 'SettingsController@index')->name('setting.view');
-    Route::post('settings/save', 'SettingsController@save')->name('setting.create');
-});
+Route::get('admin/payment/detail/{id}', 'PaymentAdminController@detailView')->name('admin.payment.detail');
+Route::post('admin/payment/add', 'PaymentAdminController@createPayment')->name('admin.payment.create');
